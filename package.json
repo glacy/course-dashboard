@@ -1,0 +1,20 @@
+{
+    "name": "course-dashboard",
+    "private": true,
+    "scripts": {
+        "dev": "pnpm --filter shell dev",
+        "dev:shell:readonly": "pnpm --filter shell dev:readonly",
+        "build": "pnpm -r build",
+        "build:student": "pnpm --filter @course-dashboard/planner build:student",
+        "build:shell:readonly": "pnpm --filter shell build:readonly"
+    },
+    "packageManager": "pnpm@9.0.0",
+    "pnpm": {
+        "overrides": {
+            "react": "^19.0.0",
+            "react-dom": "^19.0.0",
+            "@types/react": "^19.0.0",
+            "@types/react-dom": "^19.0.0"
+        }
+    }
+}

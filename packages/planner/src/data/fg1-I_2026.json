@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "config": {
+    "titleName": "Física General I",
+    "subtitleName": "Calendario de evaluaciones",
+    "semester": "I Semestre 2026",
+    "footerText": "Tecnológico de Costa Rica"
+  },
+  "exams": [
+    {
+      "id": "80f35105-c3b7-43ee-8669-3f5cda551735",
+      "title": "Bitácora e informe",
+      "subject": "Proyecto",
+      "date": "2026-02-11",
+      "time": "23:55",
+      "location": "",
+      "topics": [],
+      "notes": "Se deben entregar DOS documentos separados",
+      "formUrl": "asd",
+      "distributionUrl": ""
+    },
+    {
+      "id": "35e4a9a0-8c32-4332-8099-4cf9c2dacf6d",
+      "title": "Tarea 1",
+      "subject": "Tarea",
+      "date": "2026-04-15",
+      "time": "23:55",
+      "location": "Entregar en el grupo",
+      "topics": [
+        "Cinemática"
+      ],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": ""
+    },
+    {
+      "id": "1",
+      "title": "Primer Parcial",
+      "subject": "Examen",
+      "date": "2026-04-20",
+      "time": "13:00",
+      "location": "",
+      "topics": [],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": ""
+    },
+    {
+      "id": "826a86d2-b926-461c-ada5-7b4b253a8fe9",
+      "title": "Primer Parcial Extraordinario",
+      "subject": "Examen Extraordinario",
+      "date": "2026-04-27",
+      "time": "13:00",
+      "location": "",
+      "topics": [],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": ""
+    },
+    {
+      "id": "0129affc-d9a8-406b-8a2b-932c1a651313",
+      "title": "Tarea 2",
+      "subject": "Tarea",
+      "date": "2026-05-20",
+      "time": "23:55",
+      "location": "",
+      "topics": [],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": ""
+    },
+    {
+      "id": "2",
+      "title": "Segundo Parcial",
+      "subject": "Examen",
+      "date": "2026-05-25",
+      "time": "13:00",
+      "location": "",
+      "topics": [],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": ""
+    },
+    {
+      "id": "0f641e2d-6f6e-486c-ab39-f79234dce647",
+      "title": "Tarea 3",
+      "subject": "Tarea",
+      "date": "2026-06-10",
+      "time": "23:55",
+      "location": "",
+      "topics": [],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": ""
+    },
+    {
+      "id": "3",
+      "title": "Tercer Parcial",
+      "subject": "Examen",
+      "date": "2026-06-17",
+      "time": "08:00",
+      "location": "",
+      "topics": [],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": ""
+    }
+  ]
+}
