@@ -2,6 +2,8 @@
 
 > Una plataforma educativa moderna que transforma la forma en que estudiantes y docentes interactúan con el contenido académico.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/glacy/course-dashboard.git)
+
 ---
 
 ## La Historia 🌟
@@ -355,6 +357,50 @@ Para más detalles, consulta [`CONFIG.md`](./CONFIG.md).
 #### Contenido del Curso
 
 Edita `packages/weekly-plan/src/data/weeks.ts` para modificar el contenido semanal.
+
+---
+
+## Deployment 🚀
+
+### Vercel (Recomendado)
+
+El proyecto está preconfigurado para despliegue en **Vercel** con soporte nativo para monorepos, preview deployments y builds optimizados.
+
+**Quick Deploy:**
+
+1. Ve a [vercel.com/new](https://vercel.com/new)
+2. Importa tu repositorio de GitHub
+3. Vercel detectará automáticamente la configuración en `vercel.json`
+4. Haz clic en **Deploy**
+
+**Características:**
+- ✅ **Preview deployments** automáticos por cada PR
+- ✅ **Build optimizado** con Vite
+- ✅ **Soporte nativo** para pnpm workspaces
+- ✅ **SPA routing** configurado automáticamente
+- ✅ **Deploy en segundos** tras cada push
+
+**Deploy via CLI:**
+
+```bash
+# Instalar Vercel CLI
+pnpm add -D vercel
+
+# Login
+npx vercel login
+
+# Deploy a preview
+npx vercel
+
+# Deploy a producción
+npx vercel --prod
+```
+
+**Documentación completa:** [`docs/VERCEL_DEPLOYMENT.md`](./docs/VERCEL_DEPLOYMENT.md)
+
+### Otros proveedores
+
+El proyecto puede desplegarse en cualquier hosting estático (Netlify, GitHub Pages, Cloudflare Pages) con configuración manual.
 
 ---
 
