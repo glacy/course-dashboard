@@ -1,8 +1,9 @@
 {
-  "buildCommand": "pnpm build",
+  "buildCommand": "npm run build",
   "outputDirectory": "apps/shell/dist",
-  "installCommand": "pnpm install",
+  "installCommand": "corepack enable && pnpm install",
   "framework": "vite",
+  "devCommand": "pnpm dev",
   "rewrites": [
     {
       "source": "/(.*)",
