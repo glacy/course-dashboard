@@ -10,7 +10,6 @@ pnpm-lock.yaml
 .env.production.local
 .nyc_output
 coverage
-dist
 build
 .next
 .cache
