@@ -1,8 +1,8 @@
 {
-  "buildCommand": "pnpm build",
+  "buildCommand": "pnpm run build:shared && pnpm run build:weekly && pnpm run build:planner && pnpm run build:shell",
   "outputDirectory": "apps/shell/dist",
   "installCommand": "npx pnpm@9 install --no-frozen-lockfile",
-  "framework": "vite",
+  "framework": null,
   "devCommand": "pnpm dev",
   "rewrites": [
     {
