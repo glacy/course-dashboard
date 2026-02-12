@@ -1,5 +1,5 @@
 {
   "buildCommand": "npx nx run shell:build",
   "outputDirectory": "dist",
-  "installCommand": "npx pnpm@9 install --no-frozen-lockfile"
+  "installCommand": "pnpm install"
 }
