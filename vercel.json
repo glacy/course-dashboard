@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm run build:shared && pnpm run build:weekly && pnpm run build:planner && pnpm run build:shell",
+  "buildCommand": "pnpm build",
   "outputDirectory": "apps/shell/dist",
   "installCommand": "npx pnpm@9 install --no-frozen-lockfile",
   "framework": null,
