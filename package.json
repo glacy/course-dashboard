@@ -1,26 +1,29 @@
 {
-    "name": "course-dashboard",
-    "private": true,
-    "scripts": {
-        "dev": "pnpm --filter shell dev",
-        "dev:shell:readonly": "pnpm --filter shell dev:readonly",
-        "build": "pnpm -r build",
-        "build:shared": "cd packages/shared && pnpm run build",
-        "build:weekly": "cd packages/weekly-plan && pnpm run build",
-        "build:planner": "cd packages/planner && pnpm run build",
-        "build:shell": "cd apps/shell && pnpm run build",
-        "build:student": "pnpm --filter @course-dashboard/planner build:student",
-        "build:shell:readonly": "pnpm --filter shell build:readonly",
-        "vercel-install": "npx pnpm@9 install --no-frozen-lockfile",
-        "vercel-build": "pnpm build"
-    },
-    "packageManager": "pnpm@9.15.0",
-    "pnpm": {
-        "overrides": {
-            "react": "^19.0.0",
-            "react-dom": "^19.0.0",
-            "@types/react": "^19.0.0",
-            "@types/react-dom": "^19.0.0"
-        }
+  "name": "course-dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter shell dev",
+    "dev:shell:readonly": "pnpm --filter shell dev:readonly",
+    "build": "pnpm -r build",
+    "build:shared": "cd packages/shared && pnpm run build",
+    "build:weekly": "cd packages/weekly-plan && pnpm run build",
+    "build:planner": "cd packages/planner && pnpm run build",
+    "build:shell": "cd apps/shell && pnpm run build",
+    "build:student": "pnpm --filter @course-dashboard/planner build:student",
+    "build:shell:readonly": "pnpm --filter shell build:readonly",
+    "vercel-install": "npx pnpm@9 install --no-frozen-lockfile",
+    "vercel-build": "pnpm build"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "pnpm": {
+    "overrides": {
+      "react": "^19.0.0",
+      "react-dom": "^19.0.0",
+      "@types/react": "^19.0.0",
+      "@types/react-dom": "^19.0.0"
     }
+  },
+  "devDependencies": {
+    "nx": "22.5.0"
+  }
 }
