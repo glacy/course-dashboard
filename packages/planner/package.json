@@ -4,12 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "test": "vitest",
-    "build": "tsc && vite build",
+    "dev": "nx serve",
+    "test": "nx vite:test",
+    "build": "tsc && nx vite:build",
     "build:student": "node scripts/inject_data.js",
-    "build:readonly": "tsc && VITE_READ_ONLY=true vite build",
-    "preview": "vite preview"
+    "build:readonly": "tsc && VITE_READ_ONLY=true nx vite:build",
+    "preview": "nx vite:preview"
   },
   "dependencies": {
     "clsx": "^2.1.1",
