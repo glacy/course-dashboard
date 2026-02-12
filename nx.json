@@ -1,6 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "sourceRoot": "apps/shell",
   "nxCloudId": "698d3a1f03960ceea3ce9af0",
   "namedInputs": {
     "default": [
