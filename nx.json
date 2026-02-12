@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "nxCloudId": "698e06cd3ad6040300e61601",
+  "sourceRoot": "apps/shell",
+  "nxCloudId": "698d3a1f03960ceea3ce9af0",
   "namedInputs": {
     "default": [
       "{projectRoot}/**/*"
@@ -12,12 +13,7 @@
       "!{projectRoot}/**/*.test.{js,ts}",
       "!{projectRoot}/src/test-setup.{js,ts}",
       "!{projectRoot}/**/*.stories.{js,ts,jsx,tsx}",
-      "!{projectRoot}/.storybook/**/*",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.mjs",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/src/test-setup.[jt]s"
+      "!{projectRoot}/.storybook/**/*"
     ]
   },
   "targetDefaults": {
@@ -48,13 +44,6 @@
         "default",
         "{workspaceRoot}/.eslintrc.{js,cjs,json}"
       ]
-    },
-    "@nx/vitest:test": {
-      "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ]
     }
   },
   "generators": {
@@ -67,26 +56,12 @@
   },
   "defaultBase": "main",
   "useNxCloud": false,
-  "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
       "options": {
-        "targetName": "eslint:lint"
-      }
-    },
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "vite:build",
-        "testTargetName": "vite:test",
-        "serveTargetName": "serve",
-        "devTargetName": "vite:dev",
-        "previewTargetName": "vite:preview",
-        "serveStaticTargetName": "serve-static",
-        "typecheckTargetName": "typecheck",
-        "buildDepsTargetName": "build-deps",
-        "watchDepsTargetName": "watch-deps"
+        "cacheDirectory": "/tmp/nx-cache"
       }
     }
-  ]
+  }
 }
