@@ -1,4 +1,44 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "nxCloudId": "698d3a1f03960ceea3ce9af0"
+  "nxCloudId": "698d3a1f03960ceea3ce9af0",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/test.{js,ts}",
+      "!{projectRoot}/**/*.spec.{js,ts}",
+      "!{projectRoot}/**/*.test.{js,ts}",
+      "!{projectRoot}/src/test-setup.{js,ts}",
+      "!{projectRoot}/**/*.stories.{js,ts,jsx,tsx}",
+      "!{projectRoot}/.storybook/**/*"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.{js,cjs,json}"]
+    }
+  },
+  "generators": {
+    "@nx/react": {
+      "library": "libs",
+      "style": "tailwind",
+      "linter": "eslint",
+      "bundler": "vite"
+    }
+  },
+  "defaultBase": "main",
+  "useNxCloud": false
 }
