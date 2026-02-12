@@ -14,7 +14,7 @@
     "vercel-install": "npx pnpm@9 install --no-frozen-lockfile",
     "vercel-build": "pnpm build"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "npm@10.8.1",
   "pnpm": {
     "overrides": {
       "react": "^19.0.0",
