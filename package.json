@@ -6,7 +6,9 @@
         "dev:shell:readonly": "pnpm --filter shell dev:readonly",
         "build": "pnpm -r build",
         "build:student": "pnpm --filter @course-dashboard/planner build:student",
-        "build:shell:readonly": "pnpm --filter shell build:readonly"
+        "build:shell:readonly": "pnpm --filter shell build:readonly",
+        "vercel-install": "npx pnpm@9 install --no-frozen-lockfile",
+        "vercel-build": "pnpm build"
     },
     "packageManager": "pnpm@9.15.0",
     "pnpm": {
