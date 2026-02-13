@@ -15,8 +15,8 @@ export const useTheme = (isDarkMode: boolean) => {
     },
     button: {
       default: isDarkMode
-        ? 'hover:bg-white/5 text-slate-400 hover:text-slate-200'
-        : 'hover:bg-gray-100 text-slate-500 hover:text-slate-700'
+        ? 'hover:bg-white/5 text-slate-300 hover:text-white'
+        : 'hover:bg-gray-100 text-slate-700 hover:text-slate-900'
     }
   }), [isDarkMode]);
 };

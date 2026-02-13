@@ -13,7 +13,7 @@ export const ContentList: React.FC<ContentListProps> = ({ contents }) => {
       {contents.map((cont, i) => (
         <div key={i} className="flex gap-3 group items-center">
           <div
-            className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold transition-transform group-hover:scale-110 ${isDarkMode ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-blue-50 text-blue-600 border border-blue-100'}`}
+            className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold transition-transform group-hover:scale-110 ${isDarkMode ? 'bg-blue-500/10 text-blue-300 border border-blue-500/20' : 'bg-blue-50 text-blue-600 border border-blue-100'}`}
             aria-hidden="true"
           >
             {String(i + 1).padStart(2, '0')}

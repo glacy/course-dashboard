@@ -49,7 +49,7 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
               </div>
             </div>
             <div className="flex-shrink-0 ml-2">
-              {isOpen ? <X className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
+              {isOpen ? <X className="w-5 h-5 text-slate-500 dark:text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-500 dark:text-slate-400" />}
             </div>
           </button>
         </div>
@@ -73,7 +73,7 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
             Cronograma
           </h2>
           <span
-            className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isDarkMode ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-50 text-blue-600'
+            className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isDarkMode ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-50 text-blue-600'
               }`}
           >
             {totalWeeks} SEMANAS

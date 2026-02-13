@@ -102,8 +102,8 @@ export const WeekItem: React.FC<WeekItemProps> = ({
               : isPast
                 ? 'bg-green-500/20 border-green-500 text-green-500'
                 : isLocked
-                  ? (isDarkMode ? 'bg-slate-800 border-slate-700 text-slate-600' : 'bg-gray-100 border-gray-300 text-slate-400')
-                  : (isDarkMode ? 'bg-slate-800 border-slate-700 text-slate-500' : 'bg-gray-100 border-gray-200 text-slate-400')
+                  ? (isDarkMode ? 'bg-slate-800 border-slate-700 text-slate-400' : 'bg-gray-100 border-gray-300 text-slate-500')
+                  : (isDarkMode ? 'bg-slate-800 border-slate-700 text-slate-400' : 'bg-gray-100 border-gray-200 text-slate-500')
             }
           `}>
             {isPast ? <CheckCircle className="w-3 h-3" /> : isLocked ? <Lock className="w-3 h-3" /> : week}
@@ -118,8 +118,8 @@ export const WeekItem: React.FC<WeekItemProps> = ({
             : isPast
               ? (isDarkMode ? 'text-green-500/80' : 'text-green-600/80')
               : isLocked
-                ? (isDarkMode ? 'text-slate-600' : 'text-slate-500')
-                : 'text-slate-500'
+                ? (isDarkMode ? 'text-slate-400' : 'text-slate-600')
+                : 'text-slate-600'
             }`}>
             Semana {week}
           </p>
@@ -136,11 +136,11 @@ export const WeekItem: React.FC<WeekItemProps> = ({
         </div>
         <p className={`text-xs font-semibold truncate ${isActive || isInProgress
           ? (isDarkMode ? 'text-white' : 'text-blue-900')
-          : isLocked
-            ? (isDarkMode ? 'text-slate-600' : 'text-slate-500')
-            : isPast
-              ? (isDarkMode ? 'text-green-400/80 group-hover:text-green-400' : 'text-green-700/80 group-hover:text-green-700')
-              : (isDarkMode ? 'text-slate-400 group-hover:text-slate-200' : 'text-slate-600 group-hover:text-slate-900')
+            : isLocked
+                ? (isDarkMode ? 'text-slate-400' : 'text-slate-600')
+              : isPast
+                ? (isDarkMode ? 'text-green-400/80 group-hover:text-green-400' : 'text-green-700/80 group-hover:text-green-700')
+                : (isDarkMode ? 'text-slate-300 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900')
           }`}>
           {data?.title || `Tema ${week}`}
         </p>

@@ -43,7 +43,7 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, totalWeeks, onNa
                   <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} />
                 ))
               ) : (
-                <p className="text-slate-500 italic text-sm text-center py-4">Sin materiales asignados</p>
+                <p className="text-slate-600 dark:text-slate-400 italic text-sm text-center py-4">Sin materiales asignados</p>
               )}
             </div>
           </Section>
@@ -55,7 +55,7 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, totalWeeks, onNa
                   <LinkCard key={i} text={item.text} url={item.url} icon={item.icon} variant="evaluation" />
                 ))
               ) : (
-                <p className="text-slate-500 italic text-sm text-center py-4">Sin evaluaciones pendientes</p>
+                <p className="text-slate-600 dark:text-slate-400 italic text-sm text-center py-4">Sin evaluaciones pendientes</p>
               )}
             </div>
           </Section>

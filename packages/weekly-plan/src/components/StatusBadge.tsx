@@ -11,17 +11,17 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
   const statusConfig = {
     completed: {
       label: 'Semana completada',
-      color: isDarkMode ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-green-50 text-green-600 border border-green-100',
+      color: isDarkMode ? 'bg-green-500/10 text-green-300 border border-green-500/20' : 'bg-green-50 text-green-600 border border-green-100',
       dot: 'bg-green-500'
     },
     'in-progress': {
       label: 'Sesión semanal activa',
-      color: isDarkMode ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'bg-blue-50 text-blue-600 border border-blue-100',
+      color: isDarkMode ? 'bg-blue-500/10 text-blue-300 border border-blue-500/20' : 'bg-blue-50 text-blue-600 border border-blue-100',
       dot: 'bg-blue-500'
     },
     locked: {
       label: 'Semana bloqueada',
-      color: isDarkMode ? 'bg-slate-500/10 text-slate-400 border border-slate-500/20' : 'bg-slate-50 text-slate-500 border border-slate-200',
+      color: isDarkMode ? 'bg-slate-500/10 text-slate-300 border border-slate-500/20' : 'bg-slate-50 text-slate-600 border border-slate-200',
       dot: 'bg-slate-500'
     }
   };

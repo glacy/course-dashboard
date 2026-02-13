@@ -22,8 +22,8 @@ export const CreditsDialog: React.FC = () => {
       <DialogTrigger asChild>
         <button
           className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-small transition-colors ${isDarkMode
-            ? 'hover:bg-white/5 text-slate-400 hover:text-slate-200'
-            : 'hover:bg-gray-100 text-slate-500 hover:text-slate-700'
+            ? 'hover:bg-white/5 text-slate-300 hover:text-white'
+            : 'hover:bg-gray-100 text-slate-700 hover:text-slate-900'
             }`}
           aria-label="Ver créditos y atribuciones"
         >
@@ -39,7 +39,7 @@ export const CreditsDialog: React.FC = () => {
           <DialogTitle className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
             Créditos y Atribuciones
           </DialogTitle>
-          <DialogDescription className={isDarkMode ? 'text-slate-400' : 'text-gray-600'}>
+          <DialogDescription className={isDarkMode ? 'text-slate-300' : 'text-gray-600'}>
             Este proyecto utiliza las siguientes bibliotecas y recursos de código abierto bajo sus respectivas licencias.
           </DialogDescription>
         </DialogHeader>
@@ -72,12 +72,12 @@ export const CreditsDialog: React.FC = () => {
                         >
                           {item.name}
                         </a>
-                        <p className={`text-sm mt-1 ${isDarkMode ? 'text-slate-400' : 'text-gray-600'}`}>
+                        <p className={`text-sm mt-1 ${isDarkMode ? 'text-slate-300' : 'text-gray-600'}`}>
                           {item.description}
                         </p>
                       </div>
                       <div
-                        className={`inline-flex items-center self-start px-2 py-1 rounded text-xs font-medium shrink-0 ${isDarkMode ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700'
+                        className={`inline-flex items-center self-start px-2 py-1 rounded text-xs font-medium shrink-0 ${isDarkMode ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'
                           }`}
                       >
                         {item.license}
@@ -91,7 +91,7 @@ export const CreditsDialog: React.FC = () => {
         </div>
 
         <div
-          className={`mt-6 pt-6 border-t text-sm ${isDarkMode ? 'border-white/10 text-slate-500' : 'border-gray-200 text-gray-500'}`}
+          className={`mt-6 pt-6 border-t text-sm ${isDarkMode ? 'border-white/10 text-slate-400' : 'border-gray-200 text-gray-600'}`}
         >
           <p>
             Este proyecto es © 2026 Cátedra de {CONFIG.course.name} - {CONFIG.course.institution}.

@@ -91,7 +91,8 @@ Una herramienta de gestión de evaluaciones para docentes y estudiantes.
 ### Calidad y Accesibilidad
 - **TypeScript**: Tipado estricto para minimizar errores en tiempo de desarrollo.
 - **ESLint**: Linting configurado para mantener código limpio y consistente.
-- **WCAG 2.1**: Diseño accesible que respeta preferencias del usuario (reduced motion, temas, etc.).
+- **WCAG 2.1 AA**: Diseño accesible que respeta preferencias del usuario (reduced motion, temas, contrastes).
+- **Contraste de Colores**: Todos los elementos cumplen con ratios de contraste WCAG 2 AA (≥ 4.5:1 para texto normal). Ver [ACCESSIBILITY-CONTRAST.md](./ACCESSIBILITY-CONTRAST.md) para detalles.
 - **Responsive Design**: Optimizado para desktop, tablet y móvil.
 
 ---

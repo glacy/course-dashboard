@@ -167,13 +167,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isCol
                     </div>
                     <div className="overflow-hidden">
                         <h1 className="font-bold text-xl text-slate-800 dark:text-white tracking-tight whitespace-nowrap">{courseName}</h1>
-                        <p className="text-xs text-slate-400 dark:text-slate-500 font-medium tracking-wide uppercase mt-0.5 whitespace-nowrap">{semester}</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 font-medium tracking-wide uppercase mt-0.5 whitespace-nowrap">{semester}</p>
                     </div>
                 </motion.div>
 
                 <div className={clsx(isCollapsed ? "flex flex-col gap-2 items-center" : "space-y-2")}>
                     {!isCollapsed && (
-                        <div className="px-4 pb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                        <div className="px-4 pb-2 text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
                             Información
                         </div>
                     )}
