@@ -165,13 +165,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isCol
                 <div className="mt-auto space-y-2">
                     {isCollapsed ? (
                         <div className="flex justify-center">
-                            <a href="apps/shell/public/programa-del-curso.pdf" className="w-12 h-12 flex items-center justify-center rounded-xl text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0b0f19]" role="button" aria-label="Ver programa del curso (abre documento PDF)" title="Programa del curso">
+                            <a href="programa-del-curso.pdf" className="w-12 h-12 flex items-center justify-center rounded-xl text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0b0f19]" role="button" aria-label="Ver programa del curso (abre documento PDF)" title="Programa del curso">
                                 <BookOpen size={20} aria-hidden="true" />
                             </a>
                         </div>
                     ) : (
                         <div className="rounded-2xl bg-slate-50 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/5 dark:to-transparent border border-slate-200 dark:border-white/5 mx-4 text-center">
-                            <a href="apps/shell/public/programa-del-curso.pdf" className="inline-flex items-center justify-center gap-2 w-full text-sm font-medium text-slate-700 dark:text-white bg-white dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-white/20 active:bg-blue-100 dark:active:bg-white/30 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0b0f19]" role="button" aria-label="Ver programa del curso (abre documento PDF)">
+                            <a href="programa-del-curso.pdf" className="inline-flex items-center justify-center gap-2 w-full text-sm font-medium text-slate-700 dark:text-white bg-white dark:bg-white/10 hover:bg-blue-50 dark:hover:bg-white/20 active:bg-blue-100 dark:active:bg-white/30 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0b0f19]" role="button" aria-label="Ver programa del curso (abre documento PDF)">
                                 <BookOpen size={18} aria-hidden="true" />
                                 <span>Programa del curso</span>
                             </a>
