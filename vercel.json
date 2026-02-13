@@ -1,6 +1,6 @@
 {
   "installCommand": "npx pnpm@8 install --no-frozen-lockfile",
-  "buildCommand": "npx nx run shell:build",
+  "buildCommand": "pnpm -r build",
   "outputDirectory": "dist",
   "framework": "vite"
 }
