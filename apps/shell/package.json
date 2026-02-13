@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "nx serve",
     "dev:readonly": "VITE_READ_ONLY=true nx serve",
-    "build": "tsc -b && nx vite:build",
-    "build:readonly": "tsc -b && VITE_READ_ONLY=true nx vite:build",
+    "build": "tsc -b && nx build",
+    "build:readonly": "tsc -b && VITE_READ_ONLY=true nx build",
     "lint": "nx eslint:lint",
-    "preview": "nx vite:preview"
+    "preview": "nx preview"
   },
   "dependencies": {
     "@course-dashboard/planner": "workspace:*",
@@ -27,7 +27,7 @@
     "@types/node": "^25.2.3",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react-swc": "^3.8.0",
+    "@vitejs/plugin-react": "^5.1.2",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.20.0",
     "eslint-plugin-react-hooks": "^5.1.0",

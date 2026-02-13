@@ -11,10 +11,10 @@
     "build:shell": "cd apps/shell && pnpm run build",
     "build:student": "pnpm --filter @course-dashboard/planner build:student",
     "build:shell:readonly": "pnpm --filter shell build:readonly",
-    "vercel-install": "npx pnpm@9 install --no-frozen-lockfile",
+    "vercel-install": "npx pnpm@8 install --no-frozen-lockfile",
     "vercel-build": "pnpm build"
   },
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@8.15.8",
   "pnpm": {
     "overrides": {
       "react": "^19.0.0",
