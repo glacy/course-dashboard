@@ -1,8 +1,9 @@
 import React from 'react';
 import { Atom, LayoutDashboard, CalendarDays, BookOpen, Sun, Moon, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { useTheme } from '@course-dashboard/shared';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 interface SidebarProps {
     activeTab: 'weekly' | 'planner';
@@ -76,15 +77,47 @@ const MenuItem = ({
 export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isCollapsed, setIsCollapsed, courseName, semester }) => {
     const { theme, toggleTheme } = useTheme();
     const prefersReducedMotion = useReducedMotion();
+    const isMobile = useIsMobile();
 
     return (
-        <motion.aside
-            initial={false}
-            animate={{ width: isCollapsed ? 64 : 288 }}
-            transition={prefersReducedMotion ? { duration: 0 } : { type: "spring", stiffness: 300, damping: 30 }}
-            className="bg-white dark:bg-[#0b0f19] border-r border-slate-200 dark:border-white/5 flex flex-col h-full relative overflow-hidden transition-colors duration-300 shrink-0"
-            aria-label="Barra lateral de navegación"
-        >
+        <>
+            <AnimatePresence>
+                {isMobile && !isCollapsed && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                        onClick={() => setIsCollapsed(true)}
+                        aria-hidden="true"
+                    />
+                )}
+            </AnimatePresence>
+
+            {isMobile && isCollapsed && (
+                <button
+                    onClick={() => setIsCollapsed(false)}
+                    className="fixed top-4 left-4 z-50 md:hidden p-2.5 bg-white dark:bg-[#0b0f19] rounded-lg shadow-md border border-slate-200 dark:border-white/5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                    aria-label="Abrir menú"
+                    aria-expanded={false}
+                >
+                    <ChevronRight size={18} />
+                </button>
+            )}
+
+            <motion.aside
+                initial={false}
+                animate={{
+                    width: isMobile ? (isCollapsed ? 0 : '80%') : (isCollapsed ? 64 : 288),
+                    x: isMobile && isCollapsed ? '-100%' : 0
+                }}
+                transition={prefersReducedMotion ? { duration: 0 } : { type: "spring", stiffness: 300, damping: 30 }}
+                className={clsx(
+                    "bg-white dark:bg-[#0b0f19] border-r border-slate-200 dark:border-white/5 flex flex-col h-full relative overflow-hidden transition-colors duration-300",
+                    isMobile ? "fixed inset-y-0 left-0 z-50 max-w-[320px]" : "shrink-0"
+                )}
+                aria-label="Barra lateral de navegación"
+            >
             <motion.button
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className={clsx(
@@ -195,5 +228,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isCol
                 </div>
             </motion.div>
         </motion.aside>
+        </>
     );
 };
