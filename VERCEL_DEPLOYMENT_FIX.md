@@ -8,7 +8,7 @@ Update `vercel.json` to match your actual build setup:
 {
   "installCommand": "npx pnpm@8 install --no-frozen-lockfile",
   "buildCommand": "pnpm build:shell",
-  "outputDirectory": "dist/apps/shell",
+  "outputDirectory": "apps/shell/dist",
   "framework": "vite"
 }
 ```
@@ -19,7 +19,7 @@ Alternatively, if you want to use the root-level build script that builds all de
 {
   "installCommand": "npx pnpm@8 install --no-frozen-lockfile",
   "buildCommand": "pnpm build",
-  "outputDirectory": "dist/apps/shell",
+  "outputDirectory": "/apps/shell/dist",
   "framework": "vite"
 }
 ```
@@ -58,8 +58,8 @@ course-dashboard/
 
 Vercel deployment flow:
 1. Install: pnpm install
-2. Build: pnpm build:shell → creates dist/apps/shell/*
-3. Deploy: Serve everything in dist/apps/shell/
+2. Build: pnpm build:shell → creates apps/shell/dist/*
+3. Deploy: Serve everything in apps/shell/dist/
 ```
 
 **Framework design:**
