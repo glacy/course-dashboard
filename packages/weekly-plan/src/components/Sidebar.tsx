@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { weeksData } from '../data/weeks';
 import { WeekTimeline } from './WeekTimeline';
 import { AnimatePresence } from 'motion/react';
+import { useIsMobile } from '@course-dashboard/shared';
 
 interface SidebarProps {
   currentWeek: number;
@@ -12,21 +13,13 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, totalWeeks, maxCurrentWeek }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.innerWidth >= 1024;
-    }
-    return false;
-  });
+  const isMobile = useIsMobile();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  }, [isMobile]);
 
   const handleSelect = (week: number) => {
     if (week <= maxCurrentWeek) {
@@ -43,7 +36,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentWeek, onSelectWeek, tot
           totalWeeks={totalWeeks}
           maxCurrentWeek={maxCurrentWeek}
           isOpen={isOpen}
-          isDesktop={isDesktop}
+          isDesktop={!isMobile}
           weeksData={weeksData}
           onSelect={handleSelect}
           onToggle={() => setIsOpen(!isOpen)}
