@@ -37,14 +37,14 @@ const SidebarHeader = ({ courseName, semester, isCollapsed }: { courseName: stri
 );
 
 const CourseProgramLink = ({ isCollapsed }: { isCollapsed: boolean }) => (
-    <div className="mt-auto space-y-2">
+    <div className="mt-auto space-y-2 m-2">
         {isCollapsed ? (
             <div className="flex justify-center">
                 <a
                     href="programa-del-curso.pdf"
                     className="w-12 h-12 flex items-center justify-center rounded-xl text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-[#0b0f19]"
                     aria-label="Ver programa del curso (PDF)"
-                    title="Programa del curso"
+                    title="Programa"
                 >
                     <BookOpen size={20} aria-hidden="true" />
                 </a>
@@ -57,7 +57,7 @@ const CourseProgramLink = ({ isCollapsed }: { isCollapsed: boolean }) => (
                     aria-label="Ver programa del curso (PDF)"
                 >
                     <BookOpen size={18} aria-hidden="true" />
-                    <span>Programa del curso</span>
+                    <span>Programa</span>
                 </a>
             </div>
         )}
@@ -264,7 +264,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
                         <MenuItem
                             icon={LayoutDashboard}
-                            label="Planificación semanal"
+                            label="Planificación"
                             isActive={activeTab === 'weekly'}
                             onClick={() => setActiveTab('weekly')}
                             isCollapsed={isCollapsed}
@@ -272,7 +272,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
                         <MenuItem
                             icon={CalendarDays}
-                            label="Fechas y detalles evaluaciones"
+                            label="Evaluaciones"
                             isActive={activeTab === 'planner'}
                             onClick={() => setActiveTab('planner')}
                             isCollapsed={isCollapsed}
