@@ -12,10 +12,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sidebar responsive en móvil (shell) - Overlay sobre el contenido en lugar de empujar el layout
 - Botón de menú hamburguesa en móvil para el sidebar del shell
 - Hook `useIsMobile` para detección de dispositivos móviles
+- **Documentación de Responsive Design**: Nueva sección en README con detalles de breakpoints y consideraciones de layout
 
 ### Fixed
 
-- **Accesibilidad**: Corregidos atributos `role` incorrectos en enlaces y breadcrumbs
+- **Sidebar z-index en mobile**: El sidebar ahora permanece visible correctamente cuando se expande (z-[999])
+- **Contenido clipped en mobile < 500px**: Resuelto problema de ancho mínimo no intencional
+- **WeekTimeline overflow**: Removido `overflow-hidden` que cortaba títulos largos en mobile
+- **WeekContent responsivo**: Cambio de `w-full` a `w-auto` para ajuste fluido
+- **Section padding**: Reducido padding en mobile (`p-4 sm:p-6`) para mejor ajuste
+- **Estructura de providers**: Eliminada duplicación de `CourseProvider` en WeeklyPlan
+- **Main container shrinking**: Agregado `min-w-0` al main del Shell para permitir flexbox shrinking
+- **WeeklyPlan main container**: Cambio de `max-w-[1400px] mx-auto` a `w-full lg:max-w-[1400px] lg:mx-auto`
+- **Auto-collapse de sidebar**: El sidebar del Shell se colapsa automáticamente al cambiar de pestaña en mobile
+
+### Changed
+
+- **Mobile breakpoint**: Ajustado de 768px a 1030px para mejor definición entre mobile y desktop
+- **Sidebar behavior**: El sidebar colapsado en mobile ahora es `shrink-0` (parte del flujo) hasta expandirse
+- **WeekTimeline overflow**: Cambio de `overflow-hidden` a `min-w-0 flex-1` para mejor respuesta en mobile
+- **App.tsx alignment**: WeeklyPlan ahora usa estructura idéntica a Planner con `StrictMode` y contextos anidados
+- **Z-index hierarchy**: Reorganización de z-indexes para evitar solapamiento:
+  - Sidebar colapsado: `z-50`
+  - Sidebar expandido: `z-[999]`
+  - Overlay: `z-[998]`
+  - WeeklyPlanApp main: `z-10` (crea stacking context)
+
+### Accesibilidad
+
 - **Contraste (WCAG 2 AA)**: Mejorado contraste de colores en toda la aplicación
   - Sidebar del shell: Textos pequeños mejorados en modo oscuro y claro
   - WeekItem: Estados de semanas (bloqueado, futuro, completado) ahora legibles
@@ -26,11 +50,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - WeekContent: Mensajes de estado legibles
   - ContentList: Numeración de contenidos accesible
   - useTheme: Botones predeterminados mejorados
-
-### Changed
-
-- **Breaking**: Modo oscuro ahora usa colores más claros para mejor contraste
-- **Breaking**: Modo claro ahora usa colores más oscuros para mejor contraste
 
 ---
 

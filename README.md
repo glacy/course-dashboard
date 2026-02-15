@@ -212,6 +212,29 @@ El proyecto usa **overrides** de pnpm para garantizar consistencia en las versio
 
 Si encuentras errores de tipos en VSCode, ejecuta `pnpm install` para sincronizar.
 
+### Responsive Design y Mobile
+
+El proyecto está optimizado para funcionar correctamente en todos los tamaños de pantalla, desde dispositivos muy pequeños (< 375px) hasta pantallas grandes de escritorio.
+
+#### Breakpoints Personalizados
+
+- **Mobile** (< 1030px): Interfaz colapsada, sidebar como drawer, contenido optimizado
+- **Desktop** (≥ 1030px): Interfaz expandida, layouts lado a lado, máximo aprovechamiento de espacio
+
+#### Mobile-First Implementation
+
+- **Sidebar del Shell**: Colapsado por defecto en mobile (64px), expandible como drawer overlay
+- **WeekTimeline**: Colapsa automáticamente en mobile, se expande solo cuando hay espacio (≥ 1030px)
+- **Contenido Responsivo**: Padding ajustable (`px-4 sm:px-6`), ancho flexible, sin límites artificiales en mobile
+- **Auto-collapse en navegación**: El sidebar se colapsa automáticamente cuando cambias de pestaña en mobile
+
+#### Consideraciones de Layout
+
+- El Shell reserva 64px para el Sidebar colapsado en mobile
+- WeeklyPlanApp se ajusta fluidamente al espacio disponible sin overflow
+- Todos los componentes usan `min-w-0` para permitir shrinking sin clipping
+- El breakpoint de `useIsMobile` es **1030px** (ajustable en `packages/shared/src/hooks/useIsMobile.ts`)
+
 ### Desarrollando las Apps Individuales
 
 Cada aplicación puede desarrollarse independientemente:
@@ -352,6 +375,67 @@ export const UI_CONFIG = {
   // ...
 };
 ```
+
+Para más detalles, consulta [`CONFIG.md`](./CONFIG.md).
+
+#### Estructura de Providers y Contextos
+
+**WeeklyPlan** utiliza contextos anidados correctamente:
+
+```tsx
+// main.tsx - Punto de entrada
+<ThemeProvider>
+  <App />
+</ThemeProvider>
+
+// App.tsx - Wrapper con CourseProvider
+<CourseProvider>
+  <InnerApp />
+</CourseProvider>
+
+// InnerApp - Componente principal que usa hooks
+const InnerApp = () => {
+  const { isDarkMode } = useTheme();
+  const { currentWeekId, setCurrentWeekId, ... } = useCourse();
+  // ...
+};
+```
+
+Esto evita duplicación de contextos y permite que WeeklyPlanApp funcione correctamente cuando está embebida en el Shell.
+
+#### Estructura de Contenedores
+
+**App.tsx (WeeklyPlan):**
+```tsx
+<div className="min-h-full">                    {/* Altura relativa al padre */}
+  <main className="w-full lg:max-w-[1400px]">  {/* Ancho fluido en mobile, limitado en desktop */}
+    <aside className="w-auto lg:w-72 min-w-0"> {/* Ancho flexible, permite shrinking */}
+      <Sidebar />
+    </aside>
+    <div className="flex-1">                    {/* Crece dinámicamente */}
+      <WeekContent />
+    </div>
+  </main>
+</div>
+```
+
+**Shell App.tsx:**
+```tsx
+<div className="flex h-screen">
+  <Sidebar />                  {/* shrink-0 z-50 en mobile, 64px fijo */}
+  <main className="flex-1 min-w-0">  {/* Ocupa espacio restante, permite shrinking */}
+    {/* WeeklyPlanApp o PlannerApp */}
+  </main>
+</div>
+```
+
+#### Hechos Importantes sobre Z-Index
+
+- **Sidebar Shell (colapsado)**: `z-50` en mobile
+- **Sidebar Shell (expandido)**: `z-[999]` en mobile (siempre visible)
+- **Overlay Sidebar**: `z-[998]` (debajo del sidebar expandido)
+- **WeeklyPlanApp main**: `z-10` (crea stacking context controlado)
+- **WeeklyPlanApp UI components**: `z-50` (pero acotados dentro de `z-10`)
 
 Para más detalles, consulta [`CONFIG.md`](./CONFIG.md).
 

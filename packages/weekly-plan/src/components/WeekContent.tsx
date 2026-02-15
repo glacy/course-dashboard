@@ -18,7 +18,7 @@ interface WeekContentProps {
 
 export const WeekContent: React.FC<WeekContentProps> = ({ week, totalWeeks, onNavigate, maxCurrentWeek }) => {
   return (
-    <div className="flex-1 w-full mx-auto pb-20" role="main">
+    <div className="flex-1 w-auto mx-auto pb-20" role="main">
       <motion.div
         key={week.id}
         initial={{ opacity: 0, x: 10 }}

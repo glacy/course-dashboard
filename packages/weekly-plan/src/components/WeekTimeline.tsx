@@ -40,11 +40,11 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
               : 'bg-white border-gray-200 text-slate-800'
               }`}
           >
-            <div className="flex items-center gap-3 overflow-hidden">
+            <div className="flex items-center gap-3 min-w-0 flex-1">
               <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex-shrink-0 flex items-center justify-center">
                 <Calendar className="w-4 h-4 text-blue-500" />
               </div>
-              <div className="text-left overflow-hidden">
+              <div className="text-left min-w-0 flex-1">
                 <p className="text-sm font-bold truncate">{activeWeekData?.title}</p>
               </div>
             </div>

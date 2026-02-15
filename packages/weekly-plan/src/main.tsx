@@ -1,13 +1,13 @@
+import { StrictMode } from 'react';
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
-import "./index.css";
 import { ThemeProvider } from '@course-dashboard/shared';
-import { CourseProvider } from "./contexts/CourseContext";
+import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
-  <ThemeProvider>
-    <CourseProvider>
+  <StrictMode>
+    <ThemeProvider>
       <App />
-    </CourseProvider>
-  </ThemeProvider>
+    </ThemeProvider>
+  </StrictMode>
 );
