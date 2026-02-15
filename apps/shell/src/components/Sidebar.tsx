@@ -186,7 +186,7 @@ const MenuItem = ({
 };
 
 const CourseProgramLink = ({ isCollapsed }: { isCollapsed: boolean }) => (
-    <div className="mt-auto space-y-2">
+    <div className="mt-auto space-y-2 mb-2">
         {isCollapsed ? (
             <div className="flex justify-center">
                 <a
@@ -295,17 +295,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <motion.aside
                 layout={false}
                 initial={false}
-                 animate={{
+                animate={{
                     width: isMobileDrawer
-                        ? (isCollapsed ? 64 : '80%')
+                        ? (isCollapsed ? 64 : '100vw')
                         : (isCollapsed ? 64 : 288),
                 }}
                 transition={prefersReducedMotion ? { duration: 0 } : { type: "spring", stiffness: 300, damping: 30 }}
                 className={clsx(
-                    "bg-white dark:bg-[#0b0f19] border-r border-slate-200 dark:border-white/5 flex flex-col h-full relative overflow-hidden transition-colors duration-300",
-                    useFixedPositioning
-                        ? "fixed inset-y-0 left-0 z-50 max-w-[320px]"
-                        : "shrink-0 z-40"
+                    "bg-white dark:bg-[#0b0f19] border-r border-slate-200 dark:border-white/5 flex flex-col h-full relative transition-colors duration-300",
+                    useFixedPositioning && !isCollapsed
+                        ? "absolute inset-y-0 left-0 z-[999] overflow-visible"
+                        : useFixedPositioning && isCollapsed
+                        ? "shrink-0 z-50 overflow-hidden"
+                        : "shrink-0 z-40 overflow-hidden"
                 )}
                 aria-label="Barra lateral de navegación"
             >

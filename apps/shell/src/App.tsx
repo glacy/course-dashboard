@@ -1,13 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import WeeklyPlanApp from '@course-dashboard/weekly-plan';
 import PlannerApp from '@course-dashboard/planner';
 import { Sidebar } from './components/Sidebar';
 import { AnimatePresence, motion } from 'framer-motion';
-import { COURSE_CONFIG } from '@course-dashboard/shared';
+import { COURSE_CONFIG, useIsMobile } from '@course-dashboard/shared';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState<'weekly' | 'planner'>('weekly');
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const isMobile = useIsMobile();
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(isMobile);
+
+  useEffect(() => {
+    // Mantener el sidebar colapsado en mobile
+    setIsSidebarCollapsed(isMobile);
+  }, [isMobile]);
+
+  useEffect(() => {
+    // Colapsar sidebar al cambiar de tab en mobile
+    if (isMobile) {
+      setIsSidebarCollapsed(true);
+    }
+  }, [activeTab, isMobile]);
 
   const sidebarProps = {
     activeTab,
@@ -16,6 +29,7 @@ const App = () => {
     setIsCollapsed: setIsSidebarCollapsed,
     courseName: COURSE_CONFIG.name,
     semester: COURSE_CONFIG.semester,
+    isMobileDrawer: isMobile,
   };
 
   return (
@@ -25,10 +39,10 @@ const App = () => {
         {/* Sidebar - siempre presente, responsivo internamente */}
         <Sidebar {...sidebarProps} />
         {/* Main Content Area */}
-        <main className="flex flex-col flex-1 relative bg-slate-100 dark:bg-slate-50/5 z-20">
+        <main className="flex flex-col flex-1 relative bg-slate-100 dark:bg-slate-50/5">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5 pointer-events-none" />
 
-          <div className="flex-1 overflow-auto scrollbar-hide relative">
+          <div className="flex-1 overflow-auto scrollbar-hide relative z-0">
             <AnimatePresence mode="wait">
               {activeTab === 'weekly' && (
                 <motion.div

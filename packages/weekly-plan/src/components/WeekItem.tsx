@@ -39,7 +39,7 @@ export const WeekItem: React.FC<WeekItemProps> = ({
       aria-current={isInProgress ? "true" : isActive ? "page" : undefined}
       aria-disabled={isLocked}
       className={`
-        w-full flex items-stretch gap-3 p-3 rounded-lg text-left transition-all duration-200 group relative hover:z-50
+        w-full flex items-stretch gap-3 p-3 rounded-lg text-left transition-all duration-200 group relative hover:z-20
         ${isLocked ? 'z-0' : 'z-10'}
         ${isActive || isInProgress
           ? (isDarkMode ? 'bg-blue-600/10 border border-blue-500/30 hover:bg-blue-600/20' : 'bg-blue-500/10 border border-blue-200 shadow-sm hover:bg-blue-50')

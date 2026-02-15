@@ -1,4 +1,3 @@
-import React from 'react';
 import { Sidebar } from './components/Sidebar';
 import { WeekContent } from './components/WeekContent';
 import { CreditsDialog } from './components/CreditsDialog';
@@ -8,15 +7,15 @@ import { useCourse, CourseProvider } from './contexts/CourseContext';
 import { CONFIG } from './config/app';
 import './index.css';
 
-const InnerApp: React.FC = () => {
+const InnerApp = () => {
   const { isDarkMode } = useTheme();
   const { currentWeekId, setCurrentWeekId, maxCurrentWeek, totalWeeks, currentWeek } = useCourse();
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-[#0b0f19] text-slate-200' : 'bg-gray-50 text-slate-800'
+    <div className={`min-h-full transition-colors duration-300 ${isDarkMode ? 'bg-[#0b0f19] text-slate-200' : 'bg-gray-50 text-slate-800'
       } selection:bg-blue-500/30`}>
-      <main className="pt-4 px-6 pb-12 flex flex-col lg:flex-row gap-8 max-w-[1400px] mx-auto">
-        <aside className="w-full lg:w-72 lg:flex-shrink-0 lg:sticky lg:top-4 lg:self-start z-40">
+      <main className="pt-4 px-6 pb-12 flex flex-col lg:flex-row gap-8 max-w-[1400px] mx-auto relative z-10">
+        <aside className="w-full lg:w-72 lg:flex-shrink-0 lg:sticky lg:top-4 lg:self-start z-40 relative">
           <Sidebar
             currentWeek={currentWeekId}
             onSelectWeek={setCurrentWeekId}
@@ -47,7 +46,7 @@ const InnerApp: React.FC = () => {
   );
 };
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <CourseProvider>
       <InnerApp />
