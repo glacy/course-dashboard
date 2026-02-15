@@ -9,12 +9,13 @@ export const COURSE_CONFIG = {
       githubRepository: 'https://github.com/glacy/plan-semanal-fg1',
     },
     planner: {
-      titleName: 'Calendario',
-      subtitleName: 'Evaluaciones',
+      titleName: 'Física General I',
+      subtitleName: 'Calendario de evaluaciones',
+      footerText: 'Tecnológico de Costa Rica',
     },
   },
 };
 
 export const FOOTER_CONFIG = {
-  text: 'Tecnológico de Costa Rica',
+  text: COURSE_CONFIG.apps.planner.footerText,
 };

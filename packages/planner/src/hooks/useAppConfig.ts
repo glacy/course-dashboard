@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
+import { COURSE_CONFIG } from '@course-dashboard/shared';
 import type { AppConfig } from '../types';
 import plannerData from '../data/fg1-I_2026.json';
 
 const DEFAULT_CONFIG: AppConfig = {
-    titleName: plannerData.config.titleName,
-    subtitleName: plannerData.config.subtitleName,
-    semester: plannerData.config.semester,
-    footerText: plannerData.config.footerText
+    titleName: COURSE_CONFIG.apps.planner.titleName,
+    subtitleName: COURSE_CONFIG.apps.planner.subtitleName,
+    semester: COURSE_CONFIG.semester,
+    footerText: COURSE_CONFIG.apps.planner.footerText
 };
 
 export const useAppConfig = () => {
