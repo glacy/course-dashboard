@@ -3,7 +3,6 @@ import ExamCard from './components/ExamCard';
 import ExamStats from './components/ExamStats';
 import Filters from './components/Filters';
 import { CalendarX } from 'lucide-react';
-import { Footer, COURSE_CONFIG } from '@course-dashboard/shared';
 
 import { useExams } from './hooks/useExams';
 import './index.css';
@@ -21,7 +20,7 @@ const App: React.FC = () => {
   });
 
   return (
-    <div className="w-full min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 pb-20 transition-colors duration-300">
+    <div className="w-full min-h-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
         <div className="space-y-8">
           <ExamStats
@@ -59,12 +58,6 @@ const App: React.FC = () => {
           </div>
         </div>
       </main>
-
-      <Footer
-        footerText={COURSE_CONFIG.apps.planner.footerText}
-        githubRepository="https://github.com/glacy/examplanner"
-        variant="full"
-      />
     </div>
   );
 };

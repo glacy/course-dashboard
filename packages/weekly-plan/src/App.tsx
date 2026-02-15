@@ -1,10 +1,7 @@
 import { Sidebar } from './components/Sidebar';
 import { WeekContent } from './components/WeekContent';
-import { CreditsDialog } from './components/CreditsDialog';
-import { Analytics } from '@vercel/analytics/react';
-import { useTheme, Footer } from '@course-dashboard/shared';
+import { useTheme } from '@course-dashboard/shared';
 import { useCourse, CourseProvider } from './contexts/CourseContext';
-import { CONFIG } from './config/app';
 import './index.css';
 
 const InnerApp = () => {
@@ -33,15 +30,6 @@ const InnerApp = () => {
           />
         </div>
       </main>
-
-      <Footer
-        courseName={CONFIG.course.name}
-        institution={CONFIG.course.institution}
-        githubRepository={CONFIG.github.repository}
-        showCreditsDialog={<CreditsDialog />}
-        showAnalytics={CONFIG.external.analytics && <Analytics />}
-        variant="full"
-      />
     </div>
   );
 };

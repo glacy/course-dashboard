@@ -3,7 +3,8 @@ import WeeklyPlanApp from '@course-dashboard/weekly-plan';
 import PlannerApp from '@course-dashboard/planner';
 import { Sidebar } from './components/Sidebar';
 import { AnimatePresence, motion } from 'framer-motion';
-import { COURSE_CONFIG, useIsMobile } from '@course-dashboard/shared';
+import { COURSE_CONFIG, useIsMobile, Footer } from '@course-dashboard/shared';
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState<'weekly' | 'planner'>('weekly');
@@ -42,7 +43,7 @@ const App = () => {
         <main className="flex flex-col flex-1 relative bg-slate-100 dark:bg-slate-50/5 min-w-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5 pointer-events-none" />
 
-          <div className="flex-1 overflow-auto scrollbar-hide relative z-0">
+          <div className="flex-1 overflow-auto scrollbar-hide relative z-0 flex flex-col">
             <AnimatePresence mode="wait">
               {activeTab === 'weekly' && (
                 <motion.div
@@ -51,7 +52,7 @@ const App = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="min-h-full"
+                  className="flex-1 min-h-0"
                 >
                   <WeeklyPlanApp />
                 </motion.div>
@@ -63,12 +64,20 @@ const App = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="min-h-full"
+                  className="flex-1 min-h-0"
                 >
                   <PlannerApp />
                 </motion.div>
               )}
             </AnimatePresence>
+
+            {/* Shared Footer */}
+            <Footer
+              courseName={COURSE_CONFIG.name}
+              institution={COURSE_CONFIG.institution}
+              showAnalytics={<Analytics />}
+              variant="minimal"
+            />
           </div>
         </main>
       </div>
