@@ -11,12 +11,15 @@
       "id": "80f35105-c3b7-43ee-8669-3f5cda551735",
       "title": "Bitácora e informe",
       "subject": "Proyecto",
-      "date": "2026-02-11",
+      "date": "2026-03-27",
       "time": "23:55",
       "location": "",
-      "topics": [],
+      "topics": [
+        "Vectores",
+        "Trabajo en equipo"
+      ],
       "notes": "Se deben entregar DOS documentos separados",
-      "formUrl": "asd",
+      "formUrl": "",
       "distributionUrl": "",
       "instructionsUrl": ""
     },
@@ -26,9 +29,12 @@
       "subject": "Tarea",
       "date": "2026-04-15",
       "time": "23:55",
-      "location": "Entregar en el grupo",
+      "location": "",
       "topics": [
-        "Cinemática"
+        "Cantidades físicas",
+        "MRU",
+        "MRUA",
+        "Leyes de Newton"
       ],
       "notes": "",
       "formUrl": "",
@@ -42,7 +48,12 @@
       "date": "2026-04-20",
       "time": "13:00",
       "location": "",
-      "topics": [],
+      "topics": [
+        "Cantidades físicas",
+        "MRU",
+        "MRUA",
+        "Leyes de Newton"
+      ],
       "notes": "",
       "formUrl": "",
       "distributionUrl": "",
@@ -55,7 +66,12 @@
       "date": "2026-04-27",
       "time": "13:00",
       "location": "",
-      "topics": [],
+      "topics": [
+        "Cantidades físicas",
+        "MRU",
+        "MRUA",
+        "Leyes de Newton"
+      ],
       "notes": "",
       "formUrl": "",
       "distributionUrl": "",
@@ -68,7 +84,11 @@
       "date": "2026-05-20",
       "time": "23:55",
       "location": "",
-      "topics": [],
+      "topics": [
+        "Trabajo y energía",
+        "Conservación de la energía",
+        "Colisiones"
+      ],
       "notes": "",
       "formUrl": "",
       "distributionUrl": "",
@@ -81,7 +101,28 @@
       "date": "2026-05-25",
       "time": "13:00",
       "location": "",
-      "topics": [],
+      "topics": [
+        "Trabajo y energía",
+        "Conservación de la energía",
+        "Colisiones"
+      ],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": "",
+      "instructionsUrl": ""
+    },
+    {
+      "id": "2-extra",
+      "title": "Segundo Parcial",
+      "subject": "Examen Extraordinario",
+      "date": "2026-06-01",
+      "time": "13:00",
+      "location": "",
+      "topics": [
+        "Trabajo y energía",
+        "Conservación de la energía",
+        "Colisiones"
+      ],
       "notes": "",
       "formUrl": "",
       "distributionUrl": "",
@@ -94,7 +135,11 @@
       "date": "2026-06-10",
       "time": "23:55",
       "location": "",
-      "topics": [],
+      "topics": [
+        "Cinemática rotacional",
+        "Dinámica rotacional",
+        "Equilibrio estático"
+      ],
       "notes": "",
       "formUrl": "",
       "distributionUrl": "",
@@ -107,7 +152,28 @@
       "date": "2026-06-17",
       "time": "08:00",
       "location": "",
-      "topics": [],
+      "topics": [
+        "Cinemática rotacional",
+        "Dinámica rotacional",
+        "Equilibrio estático"
+      ],
+      "notes": "",
+      "formUrl": "",
+      "distributionUrl": "",
+      "instructionsUrl": ""
+    },
+    {
+      "id": "3-extra",
+      "title": "Tercer Parcial",
+      "subject": "Examen Extraordinario",
+      "date": "2026-06-24",
+      "time": "13:00",
+      "location": "",
+      "topics": [
+        "Cinemática rotacional",
+        "Dinámica rotacional",
+        "Equilibrio estático"
+      ],
       "notes": "",
       "formUrl": "",
       "distributionUrl": "",

@@ -5,7 +5,7 @@ export const COURSE_CONFIG = {
   totalWeeks: 16,
   apps: {
     weekly: {
-      maxCurrentWeek: 3,
+      maxCurrentWeek: 1,
       githubRepository: 'https://github.com/glacy/plan-semanal-fg1',
     },
     planner: {
