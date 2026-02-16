@@ -44,7 +44,7 @@ export const WeekItem: React.FC<WeekItemProps> = ({
         ${isActive || isInProgress
           ? (isDarkMode ? 'bg-blue-600/10 border border-blue-500/30 hover:bg-blue-600/20' : 'bg-blue-500/10 border border-blue-200 shadow-sm hover:bg-blue-50')
           : isLocked
-            ? 'opacity-40 cursor-not-allowed border border-transparent'
+            ? 'opacity-85 cursor-not-allowed border border-transparent'
             : isPast
               ? (isDarkMode ? 'bg-green-500/5 border border-green-500/20 hover:bg-green-500/10' : 'bg-green-50/50 border border-green-200/50 hover:bg-green-50')
               : 'hover:bg-black/5 border border-transparent'
@@ -136,11 +136,11 @@ export const WeekItem: React.FC<WeekItemProps> = ({
         </div>
         <p className={`text-xs font-semibold truncate ${isActive || isInProgress
           ? (isDarkMode ? 'text-white' : 'text-blue-900')
-            : isLocked
-                ? (isDarkMode ? 'text-slate-400' : 'text-slate-600')
-              : isPast
-                ? (isDarkMode ? 'text-green-400/80 group-hover:text-green-400' : 'text-green-700/80 group-hover:text-green-700')
-                : (isDarkMode ? 'text-slate-300 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900')
+          : isLocked
+            ? (isDarkMode ? 'text-slate-400' : 'text-slate-600')
+            : isPast
+              ? (isDarkMode ? 'text-green-400/80 group-hover:text-green-400' : 'text-green-700/80 group-hover:text-green-700')
+              : (isDarkMode ? 'text-slate-300 group-hover:text-white' : 'text-slate-600 group-hover:text-slate-900')
           }`}>
           {data?.title || `Tema ${week}`}
         </p>
