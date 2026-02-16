@@ -35,7 +35,7 @@ export const WeekContent: React.FC<WeekContentProps> = ({ week, totalWeeks, onNa
           <ContentList contents={week.contenidos} />
         </Section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
           <Section title="Materiales" icon={ClipboardCheck} delay={0.3}>
             <div className="grid gap-3">
               {week.consignas.length > 0 ? (

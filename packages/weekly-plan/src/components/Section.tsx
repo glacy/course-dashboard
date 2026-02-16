@@ -19,7 +19,7 @@ export const Section: React.FC<SectionProps> = ({ title, icon: Icon, children, d
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay }}
       aria-labelledby={sectionId}
-      className={`rounded-xl border p-4 sm:p-6 mb-6 transition-all duration-300 ${isDarkMode
+      className={`rounded-xl border p-4 sm:p-5 md:p-6 mb-6 transition-all duration-300 ${isDarkMode
         ? 'bg-[#161d2a] border-white/5 shadow-xl shadow-black/10'
         : 'bg-white border-gray-100 shadow-md shadow-gray-200/50'
         }`}
