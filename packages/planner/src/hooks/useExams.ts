@@ -32,10 +32,12 @@ export const useExams = () => {
 
   const getStats = () => {
     const todayStr = getTodayISO();
+    const isNotExtraordinario = (e: Exam) => !e.subject.includes('Extraordinario');
+    
     return {
-      total: exams.length,
-      upcoming: exams.filter(e => e.date > todayStr).length,
-      today: exams.filter(e => e.date === todayStr).length
+      total: exams.filter(isNotExtraordinario).length,
+      upcoming: exams.filter(e => e.date > todayStr && isNotExtraordinario(e)).length,
+      today: exams.filter(e => e.date === todayStr && isNotExtraordinario(e)).length
     };
   };
 

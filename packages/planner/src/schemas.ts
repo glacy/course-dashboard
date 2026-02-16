@@ -12,6 +12,7 @@ export const ExamSchema = z.object({
     // status removed - calculated dynamically
     formUrl: z.string().url('Debe ser una URL válida').optional().or(z.literal('')),
     distributionUrl: z.string().url('Debe ser una URL válida').optional().or(z.literal('')),
+    instructionsUrl: z.string().url('Debe ser una URL válida').optional().or(z.literal('')),
 });
 
 export const ExamListSchema = z.array(ExamSchema);

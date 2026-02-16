@@ -57,11 +57,25 @@ const ExamCard: React.FC<ExamCardProps> = ({ exam }) => {
             <Clock size={18} className="text-indigo-500 dark:text-indigo-400 mr-2" aria-hidden="true" />
             <span>{exam.time}</span>
           </div>
-          <div className="flex items-center text-slate-600 dark:text-slate-300 text-sm">
-            <MapPin size={18} className="text-indigo-500 dark:text-indigo-400 mr-2" aria-hidden="true" />
-            <span>{exam.location || 'Ubicación no especificada'}</span>
-          </div>
+          {exam.location && (
+            <div className="flex items-center text-slate-600 dark:text-slate-300 text-sm">
+              <MapPin size={18} className="text-indigo-500 dark:text-indigo-400 mr-2" aria-hidden="true" />
+              <span>{exam.location}</span>
+            </div>
+          )}
         </div>
+
+        {exam.instructionsUrl && (
+          <a
+            href={exam.instructionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full p-2 mb-6 text-sm font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-4 focus:ring-slate-500/30"
+            aria-label={`Ver instrucciones para ${exam.title}`}
+          >
+            <span>📋 Ver instrucciones</span>
+          </a>
+        )}
 
         {exam.distributionUrl && (
           <a

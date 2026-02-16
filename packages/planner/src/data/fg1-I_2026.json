@@ -17,7 +17,8 @@
       "topics": [],
       "notes": "Se deben entregar DOS documentos separados",
       "formUrl": "asd",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     },
     {
       "id": "35e4a9a0-8c32-4332-8099-4cf9c2dacf6d",
@@ -31,7 +32,8 @@
       ],
       "notes": "",
       "formUrl": "",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     },
     {
       "id": "1",
@@ -43,7 +45,8 @@
       "topics": [],
       "notes": "",
       "formUrl": "",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     },
     {
       "id": "826a86d2-b926-461c-ada5-7b4b253a8fe9",
@@ -55,7 +58,8 @@
       "topics": [],
       "notes": "",
       "formUrl": "",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     },
     {
       "id": "0129affc-d9a8-406b-8a2b-932c1a651313",
@@ -67,7 +71,8 @@
       "topics": [],
       "notes": "",
       "formUrl": "",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     },
     {
       "id": "2",
@@ -79,7 +84,8 @@
       "topics": [],
       "notes": "",
       "formUrl": "",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     },
     {
       "id": "0f641e2d-6f6e-486c-ab39-f79234dce647",
@@ -91,7 +97,8 @@
       "topics": [],
       "notes": "",
       "formUrl": "",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     },
     {
       "id": "3",
@@ -103,7 +110,8 @@
       "topics": [],
       "notes": "",
       "formUrl": "",
-      "distributionUrl": ""
+      "distributionUrl": "",
+      "instructionsUrl": ""
     }
   ]
 }

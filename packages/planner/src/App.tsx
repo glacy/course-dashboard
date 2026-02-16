@@ -21,8 +21,8 @@ const App: React.FC = () => {
 
   return (
     <div className="w-full h-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300 flex flex-col">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-4 flex-1 overflow-auto">
-        <div className="space-y-8">
+      <main className="w-full px-4 sm:px-6 lg:px-8 pt-4 pb-4 flex-1 overflow-auto min-w-0">
+        <div className="space-y-8 max-w-7xl mx-auto">
           <ExamStats
             upcoming={stats.upcoming}
             today={stats.today}
@@ -33,29 +33,29 @@ const App: React.FC = () => {
             onFilterChange={setFilter}
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredExams.length > 0 ? (
-              filteredExams.map(exam => (
+          {filteredExams.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredExams.map(exam => (
                 <ExamCard
                   key={exam.id}
                   exam={exam}
                 />
-              ))
-            ) : (
-              <div className="col-span-full py-20 text-center bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-300 dark:border-slate-700">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-300 dark:text-slate-600 mb-4">
-                  <CalendarX size={32} aria-hidden="true" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-600 dark:text-slate-400">No hay evaluaciones para mostrar</h3>
-                <p className="text-sm text-slate-400 dark:text-slate-500 max-w-xs mx-auto mt-2">
-                  No hay evaluaciones programadas para el día de hoy.
-                </p>
-                <p className="text-sm text-slate-400 dark:text-slate-500 max-w-xs mx-auto mt-2">
-                  Consulta con tu docente para más detalles.
-                </p>
+              ))}
+            </div>
+          ) : (
+            <div className="w-full min-h-96 py-20 text-center bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-300 dark:border-slate-700 flex flex-col items-center justify-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-300 dark:text-slate-600 mb-4">
+                <CalendarX size={32} aria-hidden="true" />
               </div>
-            )}
-          </div>
+              <h3 className="text-lg font-bold text-slate-600 dark:text-slate-400">No hay evaluaciones para mostrar</h3>
+              <p className="text-sm text-slate-400 dark:text-slate-500 max-w-xs mx-auto mt-2">
+                No hay evaluaciones programadas para el día de hoy.
+              </p>
+              <p className="text-sm text-slate-400 dark:text-slate-500 max-w-xs mx-auto mt-2">
+                Consulta con tu docente para más detalles.
+              </p>
+            </div>
+          )}
         </div>
       </main>
     </div>
