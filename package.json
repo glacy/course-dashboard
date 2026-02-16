@@ -1,5 +1,5 @@
 {
-  "name": "course-dashboard",
+  "name": "fisica-general-i",
   "private": true,
   "scripts": {
     "dev": "pnpm --filter shell dev",
