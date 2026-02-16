@@ -24,7 +24,7 @@ const MobileOverlay = ({ onClose }: { onClose: () => void }) => (
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/50 z-[998]"
             onClick={onClose}
-            aria-hidden="true"
+            role="presentation"
         />
     </AnimatePresence>
 );
