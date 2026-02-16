@@ -59,7 +59,7 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
         initial={false}
         animate={isOpen || isDesktop ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
         exit={{ opacity: 0, height: 0 }}
-        className={`rounded-xl border shadow-sm transition-colors duration-300 max-h-[calc(100vh-200px)] lg:max-h-[calc(100vh-120px)] flex flex-col overflow-hidden ${isDarkMode
+        className={`rounded-xl border shadow-sm transition-colors duration-300 max-h-96 lg:max-h-[60vh] flex flex-col overflow-hidden ${isDarkMode
           ? 'bg-[#161d2a] border-white/5 shadow-2xl'
           : 'bg-white border-gray-200 shadow-xl'
           } ${isOpen ? 'mt-2' : ''}`}
