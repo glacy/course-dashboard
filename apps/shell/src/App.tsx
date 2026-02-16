@@ -40,7 +40,7 @@ const App = () => {
         {/* Sidebar - siempre presente, responsivo internamente */}
         <Sidebar {...sidebarProps} />
         {/* Main Content Area */}
-        <main className="flex flex-col flex-1 relative bg-slate-100 dark:bg-slate-50/5 min-w-0">
+        <main className="flex flex-col flex-1 relative bg-slate-100 dark:bg-slate-50/5 min-w-0 h-full">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5 pointer-events-none" />
 
           <div className="flex-1 overflow-auto scrollbar-hide relative z-0 flex flex-col">
