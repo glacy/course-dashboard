@@ -36,7 +36,7 @@ const App = () => {
   return (
     <>
       {/* Contenedor principal */}
-      <div className="flex h-screen bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-200 overflow-hidden font-sans transition-colors duration-300">
+      <div className="flex h-[100dvh] bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-200 overflow-hidden font-sans transition-colors duration-300">
         {/* Sidebar - siempre presente, responsivo internamente */}
         <Sidebar {...sidebarProps} />
         {/* Main Content Area */}

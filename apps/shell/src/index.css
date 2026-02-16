@@ -9,7 +9,9 @@
 html,
 body,
 #root {
-  height: 100%;
+  /* Usar dvh (dynamic viewport height) para considerar barras de navegador */
+  /* que aparecen/desaparecen en mobile (Safari, Chrome, etc.) */
+  height: 100dvh;
   width: 100%;
   margin: 0;
   padding: 0;
