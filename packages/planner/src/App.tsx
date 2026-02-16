@@ -20,8 +20,8 @@ const App: React.FC = () => {
   });
 
   return (
-    <div className="w-full min-h-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12">
+    <div className="w-full h-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300 flex flex-col">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-4 flex-1 overflow-auto">
         <div className="space-y-8">
           <ExamStats
             upcoming={stats.upcoming}
