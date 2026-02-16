@@ -92,7 +92,7 @@ const NavigationSection = ({ isCollapsed, activeTab, setActiveTab }: { isCollaps
 
         <MenuItem
             icon={LayoutDashboard}
-            label="Planificación semanal"
+            label="Detalle semanal"
             isActive={activeTab === 'weekly'}
             onClick={() => setActiveTab('weekly')}
             isCollapsed={isCollapsed}
@@ -100,7 +100,7 @@ const NavigationSection = ({ isCollapsed, activeTab, setActiveTab }: { isCollaps
 
         <MenuItem
             icon={CalendarDays}
-            label="Fechas y detalles evaluaciones"
+            label="Evaluaciones"
             isActive={activeTab === 'planner'}
             onClick={() => setActiveTab('planner')}
             isCollapsed={isCollapsed}
@@ -306,8 +306,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     useFixedPositioning && !isCollapsed
                         ? "absolute inset-y-0 left-0 z-[999] overflow-visible"
                         : useFixedPositioning && isCollapsed
-                        ? "shrink-0 z-50 overflow-hidden"
-                        : "shrink-0 z-40 overflow-hidden"
+                            ? "shrink-0 z-50 overflow-hidden"
+                            : "shrink-0 z-40 overflow-hidden"
                 )}
                 aria-label="Barra lateral de navegación"
             >
