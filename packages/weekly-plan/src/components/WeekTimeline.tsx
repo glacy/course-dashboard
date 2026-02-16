@@ -81,7 +81,7 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
         </div>
 
         <div className="flex-1 overflow-y-auto custom-scrollbar p-2">
-          <div className="space-y-1 pb-2" role="list">
+          <ul className="space-y-1 pb-2">
             {weeks.map((week) => {
               const data = weeksData[week];
               const isActive = currentWeek === week;
@@ -90,22 +90,23 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
               const isLocked = week > maxCurrentWeek;
 
               return (
-                <WeekItem
-                  key={week}
-                  week={week}
-                  data={data}
-                  isActive={isActive}
-                  isPast={isPast}
-                  isInProgress={isInProgress}
-                  isLocked={isLocked}
+                <li key={week}>
+                  <WeekItem
+                    week={week}
+                    data={data}
+                    isActive={isActive}
+                    isPast={isPast}
+                    isInProgress={isInProgress}
+                    isLocked={isLocked}
 
-                  totalWeeks={totalWeeks}
-                  maxCurrentWeek={maxCurrentWeek}
-                  onSelect={onSelect}
-                />
+                    totalWeeks={totalWeeks}
+                    maxCurrentWeek={maxCurrentWeek}
+                    onSelect={onSelect}
+                  />
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </motion.div>
     </nav>

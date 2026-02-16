@@ -35,7 +35,6 @@ export const WeekItem: React.FC<WeekItemProps> = ({
     <button
       onClick={() => onSelect(week)}
       disabled={isLocked}
-      role="listitem"
       aria-current={isInProgress ? "true" : isActive ? "page" : undefined}
       aria-disabled={isLocked}
       className={`
