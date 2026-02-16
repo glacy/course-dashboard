@@ -39,12 +39,12 @@ export const LinkCard: React.FC<LinkCardProps> = ({ text, url, icon: Icon, varia
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${variant === 'evaluation' ? 'Actividad' : 'Recurso'}: ${text} (abre enlace externo en nueva pestaña)`}
-      className={`flex items-center gap-3 p-4 rounded-xl transition-all border group ${styles.container}`}
+      className={`flex items-center gap-3 p-4 rounded-xl transition-all border group overflow-hidden ${styles.container}`}
     >
       <div className={`p-2 rounded-lg ${styles.icon}`} aria-hidden="true">
         <Icon className={`w-4 h-4 ${styles.iconColor}`} />
       </div>
-      <span className="text-sm font-bold leading-snug flex-1">
+      <span className="text-sm font-bold leading-snug flex-1 min-w-0 break-words">
         {text}
       </span>
       <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
